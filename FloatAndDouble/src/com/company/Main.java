@@ -14,8 +14,18 @@ public class Main {
 	    System.out.println("Double min value = " + myMinDoubleValue);
 	    System.out.println("Double max value = " + myMaxDoubleValue);
 
-	    int myIntValue = 5;
-	    float myFloatValue = 5.25f;
-	    double myDoubleValue = 5.25;
+	    int myIntValue = 5 / 3;
+	    float myFloatValue = 5f / 3f;
+	    double myDoubleValue = 5d / 3d;
+	    System.out.println(myIntValue);
+	    System.out.println(myFloatValue);
+	    System.out.println(myDoubleValue);
+
+	    double pounds;
+	    double conversionRate = 0.45359237;
+	    pounds = 2;
+	    double result = pounds * conversionRate;
+
+	    System.out.println(result);
     }
 }
