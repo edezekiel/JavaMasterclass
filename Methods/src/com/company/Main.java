@@ -8,26 +8,23 @@ public class Main {
 
 		System.out.println("This is your highscore " + highscore);
 
-		displayHighScorePosition("Bob", 1);
-
 		int playerPosition = calculateHighScorePosition(1500);
-		System.out.println("High score position = " + playerPosition);
+		displayHighScorePosition("Bob", playerPosition);
 
 		playerPosition = calculateHighScorePosition(900);
-		System.out.println("High score position = " + playerPosition);
+		displayHighScorePosition("Tom", playerPosition);
 
 		playerPosition = calculateHighScorePosition(400);
-		System.out.println("High score position = " + playerPosition);
+		displayHighScorePosition("Carl", playerPosition);
 
 		playerPosition = calculateHighScorePosition(50);
-		System.out.println("High score position = " + playerPosition);
+		displayHighScorePosition("Amy", playerPosition);
 	}
 
 	public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 		if (gameOver) {
 			int finalScore = score + (levelCompleted * bonus);
 			finalScore += 2000;
-			System.out.println("Your final score was " + finalScore);
 			return finalScore;
 		} else {
 			return -1;
@@ -39,11 +36,11 @@ public class Main {
 	}
 
 	public static int calculateHighScorePosition(int playerScore) {
-		if (playerScore > 1000) {
+		if (playerScore >= 1000) {
 			return 1;
-		} else if (playerScore > 500 && playerScore < 1000) {
+		} else if (playerScore >= 500 && playerScore < 1000) {
 			return 2;
-		} else if (playerScore > 100 && playerScore < 500) {
+		} else if (playerScore >= 100 && playerScore < 500) {
 			return 3;
 		} else {
 			return 4;
