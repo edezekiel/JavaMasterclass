@@ -38,7 +38,7 @@ public class Main {
 			double feet = (int) (inches / 12);
 			double remainingInches = inches % 12;
 			// call the other overloaded method
-			calcFeetAndInchesToCentimeters(feet, remainingInches);
+			return calcFeetAndInchesToCentimeters(feet, remainingInches);
 		}
 		return -1;
 	}
