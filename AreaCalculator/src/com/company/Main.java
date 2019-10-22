@@ -42,4 +42,11 @@ public class Main {
 			System.out.println("Neither all are equal or different");
 		}
 	}
+
+	public static boolean isCatPlaying(boolean summer, int temperature) {
+		if (!summer) {
+			return (temperature > 24 && temperature < 36) ? true : false;
+		}
+		return (temperature > 24 && temperature < 46) ? true : false;
+    }
 }
