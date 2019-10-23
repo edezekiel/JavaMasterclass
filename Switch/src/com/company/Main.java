@@ -53,6 +53,11 @@ public class Main {
 
 		printDayOfTheWeek(4);
 	    printDayOfTheWeek(9);
+	    isLeapYear(-1600);
+	    isLeapYear(1600);
+	    isLeapYear(2017);
+	    isLeapYear(2000);
+		getDaysInMonth(2, 1600);
 
     }
 
@@ -82,6 +87,45 @@ public class Main {
 			default:
 				System.out.println("Invalid Day");
 				break;
+		}
+	}
+
+
+	public static boolean isLeapYear(int year) {
+		if (year < 1 || year > 9999) {
+			System.out.println(year + " is not a Leap Year");
+			return false;
+		}
+
+		if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+			System.out.println(year + " is a Leap Year");
+			return true;
+		}
+		System.out.println(year + " is not a Leap Year");
+		return false;
+	}
+
+	public static int getDaysInMonth(int month, int year) {
+		if (year < 1 || year > 9999 || month < 1 || month > 12) {
+			System.out.println("Invalid month or year.");
+			return -1;
+		} else if (isLeapYear(year) && month == 2) {
+			System.out.println(month + " 29");
+			return 29;
+		} else {
+			switch(month) {
+				case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+					System.out.println(month + " 31");
+					return 31;
+				case 2:
+					System.out.println(month + " 28");
+					return 28;
+				case 4: case 6: case 9: case 11:
+					System.out.println(month + " 30");
+					return 30;
+				default:
+					return -1;
+			}
 		}
 	}
 }
