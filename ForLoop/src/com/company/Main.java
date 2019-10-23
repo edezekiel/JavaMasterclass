@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	for (double i=9; i > 2; i--) {
+    	for (double i=8; i >=2; i--) {
 		    System.out.println("10,000 at " + i + "% interest = " +
 				                       String.format("%.2f", calculateInterest(10000.00, i)));
 	    }
