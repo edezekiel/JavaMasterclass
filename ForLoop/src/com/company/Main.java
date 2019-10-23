@@ -9,7 +9,9 @@ public class Main {
 				                       String.format("%.2f", calculateInterest(10000.00, i)));
 	    }
 
-    	rangeIsPrime(10);
+    	firstThreePrimesInRange(56, 399);
+	    firstThreePrimesInRange(3034, 39);
+
     }
 
     public static double calculateInterest(double amount, double interesteRate) {
@@ -26,7 +28,7 @@ public class Main {
 	    // than or equal to sqrt(n), n must be prime. I.e., if a number n is not
 	    // prime, it can be factored into two factors a and b.
 	    // a * b cannot be greater than n.
-    	for (int i=2; i <= n/2; i++) {
+    	for (int i=2; i <= (long) Math.sqrt(n); i++) {
     		// This would be true when a number evenly divides into n.
 		    // In that case, n would not be prime.
     		if (n % i == 0) {
@@ -36,14 +38,18 @@ public class Main {
     	return true;
     }
 
-    public static void rangeIsPrime(int number) {
-    	int numOfPrimes = 0;
-    	for (int i = 0; i < number; i++) {
-    		if (isPrime(i)) {
-			    numOfPrimes += 1;
-			    System.out.println("Prime found: " + i);
-			    if (numOfPrimes == 3) {
-			    	break;
+    public static void firstThreePrimesInRange(int start, int end) {
+    	if (start > end) {
+			System.out.println("Invalid range");
+	    } else {
+		    int numOfPrimes = 0;
+		    for (int i = start; i < end; i++) {
+			    if (isPrime(i)) {
+				    numOfPrimes += 1;
+				    System.out.println("Prime found: " + i);
+				    if (numOfPrimes == 3) {
+					    break;
+				    }
 			    }
 		    }
 	    }
